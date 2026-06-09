@@ -1,74 +1,37 @@
-<!DOCTYPE html><html lang="pl"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RainCloud</title><link rel="stylesheet" href="style.css">
-</head><body>
-<header class="hero">
-<h1>RainCloud Lamp</h1>
-<p>Efekt prawdziwego deszczu i nastrojowego światła.</p>
-<a class="btn" href="#buy">Kup teraz</a>
-</header>
-<section><h2>Dlaczego ją pokochasz?</h2>
-<div class="grid">
-<div class="box">🌧️ Efekt kropli</div>
-<div class="box">💡 LED</div>
-<div class="box">🎁 Idealna na prezent</div>
-</div></section>
-<section><h2>Opinie</h2>
-<div class="box">⭐⭐⭐⭐⭐ „Wieczorem wygląda genialnie.”</div>
-<div class="box">⭐⭐⭐⭐⭐ „Super klimat w pokoju.”</div>
-</section>
-<section><h2>Promocja kończy się za:</h2>
-<p id="timer"></p></section>
-  <section id="buy">
-<h2>149 zł</h2>
-<p>Dostawa 7-15 dni roboczych.</p>
-<a class="btn" href="#">Zamawiam</a>
-</section>
+```html
 <section id="buy">
 
 <h2>Zamów RainCloud Lamp</h2>
 
 <form id="orderForm">
 
-<input type="text"
-name="imie"
-placeholder="Imię i nazwisko"
-required>
+<input type="text" id="imie"
+placeholder="Imię i nazwisko" required>
 
 <br><br>
 
-<input type="email"
-name="email"
-placeholder="Adres e-mail"
-required>
+<input type="email" id="email"
+placeholder="Adres e-mail" required>
 
 <br><br>
 
-<input type="text"
-name="telefon"
-placeholder="Telefon"
-required>
+<input type="text" id="telefon"
+placeholder="Telefon" required>
 
 <br><br>
 
-<input type="text"
-name="adres"
-placeholder="Adres dostawy"
-required>
+<input type="text" id="adres"
+placeholder="Adres dostawy" required>
 
 <br><br>
 
-<input type="text"
-name="miasto"
-placeholder="Miasto"
-required>
+<input type="text" id="miasto"
+placeholder="Miasto" required>
 
 <br><br>
 
-<input type="number"
-name="ilosc"
-placeholder="Ilość sztuk"
-required>
+<input type="number" id="ilosc"
+placeholder="Ilość sztuk" required>
 
 <br><br>
 
@@ -78,10 +41,7 @@ Zamawiam
 
 </form>
 
+<p id="wynik"></p>
+
 </section>
-<footer>
-<p>Kontakt: kontakt@twojsklep.pl</p>
-<p>Regulamin | Polityka prywatności | Zwroty</p>
-</footer>
-<script src="script.js"></script>
-</body></html>
+```
