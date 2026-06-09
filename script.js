@@ -1,32 +1,66 @@
-const end=new Date(); end.setHours(end.getHours()+24);
-setInterval(()=>{let d=end-new Date();
-if(d<0){document.getElementById("timer").innerText="Promocja zakończona";return;}
-let h=Math.floor(d/3600000),m=Math.floor((d%3600000)/60000),s=Math.floor((d%60000)/1000);
-document.getElementById("timer").innerText=`${h}h ${m}m ${s}s`;},1000);
 document
 .getElementById("orderForm")
-.addEventListener("submit", async function(e){
+.addEventListener(
+"submit",
+async function(e){
 
 e.preventDefault();
 
-const formData = {
-  imie: this.imie.value,
-  email: this.email.value,
-  telefon: this.telefon.value,
-  adres: this.adres.value,
-  miasto: this.miasto.value,
-  ilosc: this.ilosc.value
+let dane={
+
+imie:
+document
+.getElementById("imie")
+.value,
+
+email:
+document
+.getElementById("email")
+.value,
+
+telefon:
+document
+.getElementById("telefon")
+.value,
+
+adres:
+document
+.getElementById("adres")
+.value,
+
+miasto:
+document
+.getElementById("miasto")
+.value,
+
+ilosc:
+document
+.getElementById("ilosc")
+.value
+
 };
 
 await fetch(
-"https://script.google.com/macros/s/AKfycbyVZBv0byXiDq6QX1g5PgAYXQMA4fjyRxc2RE1ueZCqrYjh3hlNAgE5Qja6UZI_vLpF/exec",
-{
-method:"POST",
-body:JSON.stringify(formData)
-});
 
-alert("Dziękujemy za zamówienie!");
+"https://script.google.com/macros/s/AKfycby8rQTQq4VFgcVaDWR11kIMNPF7mKWVAYd82oH8xN0QJYbZn9BloEH0akymbCdwAAL4/exec",
+
+{
+
+method:"POST",
+
+body:
+JSON.stringify(dane)
+
+}
+
+);
+
+document
+.getElementById("wynik")
+.innerHTML=
+"Dziękujemy za zamówienie!";
 
 this.reset();
 
-});
+}
+);
