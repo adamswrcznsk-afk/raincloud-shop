@@ -64,3 +64,24 @@ this.reset();
 
 }
 );
+let cart = 0;
+
+function addToCart(){
+
+cart++;
+
+document.getElementById(
+"cart-items"
+).innerHTML=
+"RainCloud Lamp x " + cart;
+
+document.getElementById(
+"cart-total"
+).innerHTML=
+"Razem: " + (cart*149) + " PLN";
+
+document.getElementById(
+"ilosc"
+).value = cart;
+
+}
