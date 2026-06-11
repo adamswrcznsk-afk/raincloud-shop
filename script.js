@@ -1,87 +1,63 @@
-document
-.getElementById("orderForm")
-.addEventListener(
-"submit",
-async function(e){
+function addToCart(){
 
-e.preventDefault();
+let produkt = {
 
-let dane={
+nazwa:"RainCloud Lamp",
 
-imie:
-document
-.getElementById("imie")
-.value,
+cena:149,
 
-email:
-document
-.getElementById("email")
-.value,
-
-telefon:
-document
-.getElementById("telefon")
-.value,
-
-adres:
-document
-.getElementById("adres")
-.value,
-
-miasto:
-document
-.getElementById("miasto")
-.value,
-
-ilosc:
-document
-.getElementById("ilosc")
-.value
+ilosc:1
 
 };
 
-await fetch(
+localStorage.setItem(
+"cart",
+JSON.stringify(produkt)
+);
 
-"https://script.google.com/macros/s/AKfycby8rQTQq4VFgcVaDWR11kIMNPF7mKWVAYd82oH8xN0QJYbZn9BloEH0akymbCdwAAL4/exec",
-
-{
-
-method:"POST",
-
-body:
-JSON.stringify(dane)
+window.location.href="cart.html";
 
 }
 
+
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+let koszyk=
+JSON.parse(
+localStorage.getItem("cart")
 );
 
-document
-.getElementById("wynik")
-.innerHTML=
-"Dziękujemy za zamówienie!";
-
-this.reset();
-
-}
-);
-let cart = 0;
-
-function addToCart(){
-
-cart++;
+if(
+document.getElementById("produkt")
+&&
+koszyk
+){
 
 document.getElementById(
-"cart-items"
+"produkt"
 ).innerHTML=
-"RainCloud Lamp x " + cart;
+koszyk.nazwa;
 
 document.getElementById(
-"cart-total"
+"cena"
 ).innerHTML=
-"Razem: " + (cart*149) + " PLN";
+koszyk.cena+" PLN";
 
 document.getElementById(
 "ilosc"
-).value = cart;
+).innerHTML=
+koszyk.ilosc;
+
+document.getElementById(
+"razem"
+).innerHTML=
+(koszyk.cena*koszyk.ilosc)
++" PLN";
 
 }
+
+}
+);
