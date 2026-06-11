@@ -61,3 +61,38 @@ document.getElementById(
 
 }
 );
+let ilosc = 1;
+let cena = 149;
+
+function odswiezKoszyk(){
+
+document.getElementById(
+"ilosc"
+).innerHTML = ilosc;
+
+document.getElementById(
+"razem"
+).innerHTML =
+(ilosc * cena) + " PLN";
+
+}
+
+function zwieksz(){
+
+ilosc++;
+
+odswiezKoszyk();
+
+}
+
+function zmniejsz(){
+
+if(ilosc>1){
+
+ilosc--;
+
+odswiezKoszyk();
+
+}
+
+}
